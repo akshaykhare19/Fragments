@@ -12,15 +12,8 @@ import com.learning.learningfragments.R
  * Use the [Fragment1.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Fragment1 : Fragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_1, container, false)
-    }
-
+//One way to implement fragment is to directly make a class
+class Fragment1 : Fragment(R.layout.fragment_1) {
 
 }

@@ -12,6 +12,9 @@ import com.learning.learningfragments.R
  * Use the [Fragment2.newInstance] factory method to
  * create an instance of this fragment.
  */
+
+
+//Another way to implement fragments is the traditional way i.e. same as creating a new activity
 class Fragment2 : Fragment() {
 
     override fun onCreateView(
