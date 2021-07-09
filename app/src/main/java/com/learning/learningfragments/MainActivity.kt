@@ -5,26 +5,27 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.learning.learningfragments.databinding.ActivityMainBinding
 import com.learning.learningfragments.fragments.Fragment1
 import com.learning.learningfragments.fragments.Fragment2
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var firstFragmentBtn:Button
-    lateinit var secondFragmentBtn:Button
+
+    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        firstFragmentBtn = findViewById(R.id.fragment_1_btn)
-        secondFragmentBtn = findViewById(R.id.fragment_2_btn)
 
-        firstFragmentBtn.setOnClickListener {
+
+        binding.fragment1Btn.setOnClickListener {
             replaceFragment(Fragment1())
         }
 
-        secondFragmentBtn.setOnClickListener {
+        binding.fragment2Btn.setOnClickListener {
             replaceFragment(Fragment2())
         }
 
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         val fragmentManager = supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.frame_layout, fragment)
+                .replace(R.id.container_view, fragment)
                 .commit()
 
 //        Alternate method
